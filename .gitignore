@@ -1,0 +1,14 @@
+# Ignore Gradle wrapper files
+.gradle/
+.gradle/*
+
+# Ignore IntelliJ IDEA project files
+.idea/
+.idea/*
+
+# Ignore build directory
+build/
+build/*
+
+target/
+target/*
