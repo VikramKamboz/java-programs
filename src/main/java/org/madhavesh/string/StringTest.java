@@ -1,6 +1,7 @@
-package org.madhavesh;
+package org.madhavesh.string;
 
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -13,7 +14,8 @@ public class StringTest {
 
    public static void main(String[] aa)
    {
-       reverseEachWorldNotforReverse();
+       //reverseEachWorldNotforReverse();
+       reverseEachWorldNotforReverseUsingStreams();
 
    }
    void reverseWithoutStream()
@@ -41,7 +43,7 @@ void reverseEachWorld()
 }
     static void reverseEachWorldNotforReverse()
     {
-        String s1="Reverse maddy rai";
+        String s1="reverse maddy rai";
        String[] sp= s1.toLowerCase(Locale.ROOT).split(" ");
        String[] newstr;
        for(int i=0;i<sp.length-1;i++)
@@ -63,12 +65,21 @@ void reverseEachWorld()
 
        }
         System.out.println("-------->>>>>"+sp.toString());
-        String[] str= s1.split(" ");
-        String poststr= Stream.of(str).map((i)-> new StringBuilder(i).reverse()).collect(Collectors.joining(" "));
-        System.out.println("     each word reversal  example---"+poststr);
+        System.out.println("-----using streams--->>>>>"+sp.toString());
+
     }
 
+    public static void reverseEachWorldNotforReverseUsingStreams()
+    {
+        String s1="reverse maddy rai";
+        String[] str= s1.split(" ");
+        String ignore="reverse";
+        int index= s1.indexOf("reverse");
+        String strmrev=Arrays.stream(str,index+1,str.length).map((i)-> new StringBuilder(i).reverse()).collect(Collectors.joining(" "));
+        String reversed=ignore.concat(" ")+strmrev;
+        System.out.println("     each word reversal  example---"+reversed);
 
+    }
 
 
 
