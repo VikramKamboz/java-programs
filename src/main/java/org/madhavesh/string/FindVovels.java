@@ -1,9 +1,13 @@
 package org.madhavesh.string;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 public class FindVovels {
     public static void main(String[] args)
     {
         findVoles("maddyrai");
+        findVolesStreams("maddyrai");
 
     }
     static void findVoles(String str)
@@ -21,5 +25,10 @@ public class FindVovels {
         System.out.println(vovel);
         System.out.println("total vovels are:"+ count);
 
+    }
+
+    static void  findVolesStreams(String str)
+    {
+        Stream.of(Arrays.asList(str.toCharArray())).findAny().filter()
     }
 }
