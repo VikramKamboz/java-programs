@@ -29,6 +29,6 @@ public class FindVovels {
 
     static void  findVolesStreams(String str)
     {
-        Stream.of(Arrays.asList(str.toCharArray())).findAny().filter()
+       // Stream.of(Arrays.asList(str.toCharArray())).findAny().toString();
     }
 }
